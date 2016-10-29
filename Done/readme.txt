@@ -1,0 +1,1 @@
+Zadania z programowania znajduj¹ siê w folderach nazwanych zgodnie z list¹, na której znajduje siê zadanie.
