@@ -1,1 +1,0 @@
-﻿Zadania z programowania znajdują się w folderach nazwanych zgodnie z listą, na której znajduje się zadanie.
