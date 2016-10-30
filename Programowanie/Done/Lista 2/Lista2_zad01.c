@@ -6,7 +6,7 @@ main()
 {
 	char chars[1024];
 	int count[1024][2] = {0,0};
-	int i = 0, j = 0, quantity = 0;
+	int i = 0, j = 0, quantity = 0, change = 0;
 	printf("Wpisz ciag znakow: ");
 	fgets(chars, 1024, stdin);
 
@@ -19,18 +19,19 @@ main()
 		}
 		else
 		{
-			for (j = 0; j < i; j++)
+			for (j = 0; j <= i; j++)
 			{
 				if (count[j][0] == chars[i])
 				{
+					change++;
 					count[j][1] = count[j][1] + 1;
 					break;
 				}
 			}
-			if (j == i)
+			if (j-1 == i)
 			{
-				count[i][0] = chars[i];
-				count[i][1] = 1;
+				count[i-change][0] = chars[i];
+				count[i-change][1] = 1;
 				quantity++;
 			}
 		}
