@@ -1,4 +1,41 @@
+
 #include<stdio.h>
+
+
+
+void decode(int *numbers)
+{
+    char binary[1024][8];
+    int i = 0, x = 0, j =0, temp = 0;
+    for(i = 0; numbers[i] != '\n'; i++)
+    {
+        temp = numbers[i];
+        do
+        {
+            if (temp % 2 == 0)
+            {
+                binary[i][x] = '0';
+                temp /= 2;
+                x++;
+            }
+            else
+            {
+                binary[i][x] = '1';
+                temp /= 2;
+                x++;
+            }
+        } while (temp >= 1);
+    }
+    binary[i][0] = '\n';
+    for(i = 0;  ; i++)
+    {
+        for(j = 0; j < 8; j++)
+        {
+            printf("%c", binary[i][j]);
+        }
+        printf("\n");
+    }
+}
 
 int power(int a, int b)
 {
@@ -18,6 +55,7 @@ void codeStrings(char *newCode, int x)
 {
 	int i = 0, z = 0, j = 0, temp = 0;
 	int numbers[1024],num[128];
+	printf("\n");
 	for (i = 0; i < x; i++)
 	{
 		if ((i + 1) % 8 == 0)
@@ -30,17 +68,17 @@ void codeStrings(char *newCode, int x)
 					temp += (newCode[j] - 48)*(power(2, i - j));
 				}
 			}
-			printf("\n%d", temp);
+			printf("%d", temp);
 		}
-		
-	}
 
+	}
+printf("\n");
 
 
 }
 
 int mod8(int x, char *newCode)
-{ 
+{
 	if (x % 8 == 0)
 	{
 		newCode[x] = '\n';
@@ -104,7 +142,7 @@ void code(char *sentence)
 			}
 		}
 	}
-	
+
 	x = mod8(x, &newCode);
 
 	for (i = 0; newCode[i] != '\n';i++)
@@ -116,10 +154,38 @@ void code(char *sentence)
 main()
 {
 	char sentence[1024];
-	printf("Podaj ciag znakow 'a','b','c','d': ");
-	fgets(sentence, 1024, stdin);
-	code(&sentence);
-	
+	char menu, next;
+	int numbers[1024];
+	int i = 0;
+        printf("Chcesz kodowac?[1] Chcesz Odkodowac?[2]");
+        scanf("%c", &menu);
+        getchar();
+        if(menu == '1')
+        {
+            printf("Podaj ciag znakow 'a','b','c','d': ");
+            fgets(sentence, 1024, stdin);
+            code(&sentence);
+        }
+        else if(menu == '2')
+        {
+            do
+            {
+                next = 'n';
+                printf("Podaj ciag liczb:[0-255]");
+                scanf("%d", &numbers[i]);
+                getchar();
+                printf("Chcesz podac kolejna liczbe? [t/n]");
+                scanf("%c", &next);
+                getchar();
+                i++;
+            }while(next == 't' || next =='T');
+            decode(&numbers);
+        }
+
+
+
+
+
 
 	system("PAUSE");
 	return 0;
