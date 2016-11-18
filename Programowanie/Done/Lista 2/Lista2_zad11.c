@@ -1,5 +1,16 @@
 #include<stdio.h>
 #include<math.h>
+/*
+	Napisz program, który pobiera od użytkownika liczbę naturalną n (unsigned int)
+	oraz liczbę naturalną m z zakresu 1 do 32. Następnie:
+		a) zapala m-ty bit liczby n,
+		b) gasi m-ty bit liczby n,
+		c) robi negację m-tego bitu liczby n,
+		d) przesuwa bity liczby n w prawo o m pozycji,
+		e) przesuwa bity liczby n w lewo o m pozycji,
+	Po każdej z wymienionych operacji program wyświetla liczbę n w postaci dziesiętnej
+	i binarnej.
+*/
 void decToBin(unsigned int number)
 {
 	unsigned int check = 32768, x = 0;
@@ -22,8 +33,8 @@ void decToBin(unsigned int number)
 		check >>= 1;
 	}
 	
-
 }
+// Funkcja potegowania w celu znalezienia odpowiedniego bitu
 int power(int a, int b)
 {
 	int i = 0;
@@ -69,22 +80,28 @@ void leftShift(unsigned int number, unsigned int m)
 }
 main()
 {
-	unsigned int n = 0, m = 0;
+	unsigned int n = 0, m = 0;				// liczby podane przez uzytkownika
 	printf("\n Podaj liczbe naturalna: ");
 	scanf("%u", &n);
 	printf(" Podaj liczbe naturalna z zakresu 1-32: ");
 	scanf("%u", &m);
 	printf("---------------------\n");
-	decToBin(n);
+	// zamiana na liczbe binarna i jej wyswietlenie
+	decToBin(n);	
 	printf("\n---------------------");
+	// A - zapalenie m-tego bitu i wyswieltenie
 	turnOnBit(n, m);
 	printf("\n---------------------");
+	// B - zgaszenie m-tego bitu i wyswietlenie
 	turnOffBit(n, m);
 	printf("\n---------------------");
+	// C - negacja m-tego bitu i wyswietlenie
 	negationOfBit(n, m);
 	printf("\n---------------------");
+	// D - przesuniecie o m bitow w prawo i wyswietlenie
 	rightShift(n, m);
 	printf("\n---------------------");
+	// E - przesuniecie o m bitow w lewo i wyswietlenie
 	leftShift(n, m);
 	printf("\n---------------------");
 	printf("\n");

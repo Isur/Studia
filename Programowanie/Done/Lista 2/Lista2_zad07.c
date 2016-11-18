@@ -1,6 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+/*
+	Napisz funkcję o prototypie
+	void litery( char *s, char *t );
+	która do łańcucha s wpisuje wszystkie litery jakie pojawiły się w łańcuchu t bez 
+	powtórzeń i rozróżniania ich wielkości, tzn. dla t="Ala ma kota" otrzymamy s="aklmot".
+*/
 int sizeOfArrayContent(char *arrayContent, int arraySize)
 {
 	int i = 0, size = 0;
@@ -16,9 +21,10 @@ int sizeOfArrayContent(char *arrayContent, int arraySize)
 
 void litery(char *s, int sSize, char *t, int tSize)
 {
-	int i = 0, j = 0; 
-	int size = 0, chars = 0, change = 0;
+	int i = 0, j = 0; 						// zmienne pomocnicze
+	int size = 0, chars = 0, change = 0;	// dlugosc ciagu, ilosc roznych znakow, roznica pomiedzy iloscia znakow a iloscia roznych znakow
 	size = sizeOfArrayContent(t, tSize);
+	// sprawdzanie czy znak sie powtarza, jesli nie to przypisuje go do nowej tablicy
 	for (i = 0; i < size; i++)
 	{
 		if (i == 0)
@@ -40,6 +46,7 @@ void litery(char *s, int sSize, char *t, int tSize)
 			}
 		}
 	}
+	// wypisanie znakow.
 	for (i = 0; i <= chars; i++)
 	{
 		printf("%c", s[i]);
@@ -51,8 +58,8 @@ void litery(char *s, int sSize, char *t, int tSize)
 
 main()
 {
-	char s[1024], t[1024];
-	printf("Podaj lancuch znakow: ");
+	char s[1024], t[1024];				
+	printf("Podaj lancuch znakow: ");	
 	fgets(t, 1024, stdin);
 	litery(s,sizeof(s), t, sizeof(t));
 

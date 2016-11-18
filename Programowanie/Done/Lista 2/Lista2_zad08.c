@@ -1,6 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+/*
+	Dwa wyrazy nazywamy anagramami jeśli jeden można otrzymać z drugiego poprzez przestawienie kolejności liter, 
+	na przykład "kanonada" i "anakonda", "sekret" i "kretes". Napisz funkcję o prototypie
+	int anagramy( char *s, char *t );
+	która sprawdza, czy dane dwa łańcuchy są anagramami. Jeśli są to funkcja zwraca
+	wartość 1, w przeciwnym razie 0.
+*/
 int sizeOfArrayContent(char *arrayContent, int arraySize)
 {
 	int i = 0, size = 0;
@@ -33,12 +40,13 @@ void sort(char *array, int size)
 
 int anagramy(char *word, int wordSize, char *anagram, int anagramSize)
 {
-	int sizeWord = 0, sizeAnagram = 0, result = 0;
-	int i = 0, j = 0, temp = 0;
-	char charsWord[1024], charsAnagram[1024];
-
+	int sizeWord = 0, sizeAnagram = 0;	
+	int i = 0, j = 0, temp = 0;						// zmienne pomocnicze
+	char charsWord[1024], charsAnagram[1024];		
+	// dlugosci ciagow:
 	sizeWord = sizeOfArrayContent(word, wordSize);
 	sizeAnagram = sizeOfArrayContent(anagram, anagramSize);	
+	// tablice pomocnicze
 	for (i = 0; i < sizeWord; i++)
 	{
 		charsWord[i] = word[i];
@@ -49,7 +57,7 @@ int anagramy(char *word, int wordSize, char *anagram, int anagramSize)
 		charsAnagram[i] = anagram[i];
 	}
 	charsAnagram[i] = '\0';
-
+	// sortowanie w celu porownania
 	sort(charsWord, sizeWord);
 	sort(charsAnagram, sizeAnagram);
 
@@ -59,11 +67,12 @@ int anagramy(char *word, int wordSize, char *anagram, int anagramSize)
 main()
 {
 	char word[1024], anagram[1024];
+	// pobieranie ciagow podanych przez uzytkownika
 	printf("Podaj slowo: ");
 	fgets(word, 1024, stdin);
 	printf("Podaj slowo, ktore nalezy sprawdzic, czy jest anagramem: ");
 	fgets(anagram, 1024, stdin);
-
+	// wynik: 
 	printf("\n%d\n", anagramy(word, sizeof(word), anagram, sizeof(anagram)));
 
 	system("PAUSE");
