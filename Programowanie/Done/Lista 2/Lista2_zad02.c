@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<stdlib.h>
 /*
 Napisz program, który podbiera od użytkownika 10 liczb typu double, zapisuje
@@ -48,10 +48,10 @@ double findMax(double array[], int arraySize)
 }
 main()
 {
-	double array[10];			// tablica przechowujaca liczby
-	double min, max;			
-	int i = 0;					// zmienna pomocnicza
-	for (i = 0; i < 10; i++)	// Pobieranie liczb od uzytkownika
+	double array[10];       	// tablica przechowujaca liczby
+	double min, max;            
+	int i = 0;             		// zmienna pomocnicza
+	for (i = 0; i < 10; i++)    // Pobieranie liczb od uzytkownika
 	{
 		printf("Podaj %d liczbe: ", i + 1);
 		scanf("%lf", &array[i]);
