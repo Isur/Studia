@@ -8,12 +8,17 @@ lokalnych. Nie korzystaj z biblioteki string.h.
 #include<stdio.h>
 int porownaj(char *s, char *t)
 {
-	/*if(strcmp(s,t) == 0)
-		return 1;
-	else
-		return 0;*/
-
-	
+    while(*t || *s)
+    {
+	if(*s == *t)
+    {
+        *s++;
+        *t++;
+    }
+    else
+        return 0;
+    }
+    return 1;
 }
 main()
 {
