@@ -25,9 +25,8 @@ main()
 			printf("%d\n",i);
 			i++;
 		}
-		
 	};
-
+	printf("\n\n");
 	system("PAUSE");
 	return 0;
 }

@@ -27,6 +27,7 @@ main()
     int randomPosition = 0;
     randomPosition = random(0,4);
     printf("%s", array[randomPosition]);
+    
     printf("\n\n");
     system("PAUSE");
     return 0;

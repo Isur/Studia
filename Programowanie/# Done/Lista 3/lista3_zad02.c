@@ -1,9 +1,9 @@
 /*
-Napisz definicjê funkcji o prototypie
+Napisz definicjÄ™ funkcji o prototypie
 int porownaj( char *s, char *t );
-która sprawdza czy podane ³añcuchy s¹ takie same. Funkcja zwraca 1 jeœli s¹ takie
-same, w przeciwnym razie zwraca 0. Oprócz s i t nie u¿ywaj innych zmiennych
-lokalnych. Nie korzystaj z biblioteki string.h.
+ktÃ³ra sprawdza czy podane Å‚aÅ„cuchy sÄ… takie same. Funkcja zwraca 1 jeÅ›li sÄ… takie
+same, w przeciwnym razie zwraca 0. OprÃ³cz s i t nie uÅ¼ywaj innych zmiennych
+lokalnych. Nie korzystaj z biblioteki string.h
 */
 #include<stdio.h>
 int porownaj(char *s, char *t)
@@ -29,6 +29,8 @@ main()
 	fgets(t, 1024, stdin);
 
 	printf("\n%d\n", porownaj(s, t));
+
+    printf("\n\n");
 	system("PAUSE");
 	return 0;
 }

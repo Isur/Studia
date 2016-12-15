@@ -1,9 +1,11 @@
-/* SprawdŸ, ile bajtów pamiêci zajmuje zmienna wskaŸnikowa. */
+/* SprawdÅº, ile bajtÃ³w pamiÄ™ci zajmuje zmienna wskaÅºnikowa. */ 
 #include<stdio.h>
 main()
 {
     int *p;
     printf("Wskaznik zajmuje %d bajty \n", sizeof(p));
+
+    printf("\n\n");
     system("PAUSE");
     return 0;
 }

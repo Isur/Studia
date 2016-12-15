@@ -23,6 +23,7 @@ main()
     int randomChar;
     randomChar = random(97,123);
     printf("%c", randomChar);
+
     printf("\n\n");
     system("PAUSE");
     return 0;
