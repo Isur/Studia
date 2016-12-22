@@ -11,46 +11,40 @@ wstawić do pola tp wartość 0 lub 1. Następnie funkcja powinna wczytać do po
 
 #include<stdio.h>
 
-
-union Liczba
-{
-	int c;
-	double z;
-}zaw;
-
 struct Dane
 {
 	int tp;
-	union Liczba zaw;
-
+	union Liczba
+	{
+		int c;
+		double z;
+	}zaw;
 }dane;
 
 void addData()
 {
-	char wyb;
-	printf("Calkowita czy wymierna? [1/2]: ");
-	scanf("%c", &wyb);
-	if(wyb == '1')
-	{
-		dane.tp = 1;
-		printf("\n Podaj liczbe calkowita: ");
-		scanf("%d", &zaw.c);
-	}
-	else if(wyb == '2')
+	char ask;
+	printf("\n1. Calkowita lub 2. Wymierna?: ");		
+	scanf("%c", &ask);
+	printf("\nPodaj ta liczbe: ");
+	if(ask == '1') 
 	{
 		dane.tp = 0;
-		printf("\n Podaj liczbe wymierna: ");
-		scanf("%lf", &zaw.z);
+		scanf("%d", &dane.zaw.c);
 	}
-	
+	else if(ask == '2') 
+	{
+		dane.tp = 1;
+		scanf("%lf", &dane.zaw.z);
+	}
 }
 
 main()
 {
 
-
 addData();
-printf("%d", zaw.c);
+if(dane.tp == 0) printf("%d", dane.zaw.c);
+if(dane.tp == 1) printf("%lf", dane.zaw.z);
 
 printf("\n\n");
 system("PAUSE");
