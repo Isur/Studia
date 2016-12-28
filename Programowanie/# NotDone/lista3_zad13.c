@@ -9,7 +9,12 @@ i nie jest już nigdzie kopiowane aż do całkowitego zakończenia działania pr
 #include<stdio.h>
 #include<ctype.h>
 
-
+int string_compare(const char *a, const char *b)
+{
+	if(strcmp(a,b) == 0) return 0;
+	else if(strcmp(a,b) > 0) return 1;
+	else return -1;
+}
 
 void getWords()
 {
@@ -23,6 +28,9 @@ void getWords()
 		n++;
 	}while(strcmp(words[n-1],"\\ready") != 0);
 	words[n-1][0] = '\0'; 
+
+	qsort(*words, n, sizeof(char *), string_compare);
+
 	for (i = 0; i < n; i++)
 	{
 		j = 0;
