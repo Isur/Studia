@@ -10,7 +10,7 @@ napisów składających się ze znaków typu char i wchart
 
 void przepisz_wchar_t(wchar_t *firstWString, wchar_t *secondWString)
 {
-		while(*firstWString)
+	while(*firstWString)
 	{
 		*secondWString = *firstWString;
 		*firstWString++;

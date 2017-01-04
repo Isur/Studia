@@ -1,0 +1,41 @@
+Data: 2012-12-01
+Imię i nazwisko: ...
+
+1. Ile gniazd sieciowych jest dostępnych w okablowaniu strukturalnym w laboratorium, w którym aktualnie realizowane są zajęcia?
+32
+
+2. W jaki sposób można zarządzać przełącznikiem sieciowym w laboratorium, w którym aktualnie realizowane są zajęcia?
+Poprzez przeglądarkę internetową, za pomocą konsoli(telnet, ssh).
+
+3. Gdzie zlokalizowany jest najbliższy stanowisku wykładowcy punkt dostępowy należący do infrastruktury RMS?
+W sali 406, na  biurku, na prawo od mojego stanowiska.
+
+4. Konfiguracja TCP/IP komputera laboratoryjnego, przy którym Pani (Pan) się znajduje ?
+4.1. Adres IPv4: 157.158.16.9
+4.2. Adres MAC: D0-50-99-82-92-D0
+4.3. Brama: fe80::8ae0:f300:2fbb:3000%14
+4.4. DNS: 157.158.16.150, 157.158.16.100
+
+
+5. Jaką rolę pełnią maszyny, których adresy zostały wymienione w pkt. 4.4 ?
+	Pełnia role serwerów DNS czyli system serwerów, protokół komunikacyjny oraz usługa obsługująca rozproszoną bazę danych adresów sieciowych. Pozwala na zamianę adresów znanych użytkownikom Internetu na adresy zrozumiałe dla urządzeń tworzących sieć komputerową.
+
+6. Co znajduje się pod adresem: 158.157.16.204?
+Urządzenie w Columbus (USA, Ohio) https://db-ip.com/158.157.16.204
+
+7. Pobierz AIS: http://www.advanced-ip-scanner.com/. Przeprowadź eksperyment myślowy albo wywiad w celu ustalenia efektów uruchomienia tego oprogramowania w laboratorium RMS.
+Oprogramowanie pokazuje urządzenia, które mają przypisany adres IP.
+
+8. W przypadku dostępności urządzeń o poniżej wymienionych adresach IP, podaj zalecenia dla osób odpowiedzialnych za ich administrację:
+
+8.1. 157.158.16.208. Zalecenie: Zablokować dostęp tym, którzy go mieć nie powinni.
+8.2. 157.158.16.155. Zalecenie: Zablokować dostęp tym, którzy go mieć nie powinni. 
+8.3. 157.158.16.138. Zalecenie: Rozwiązanie zagadki Einsteina zezwala na dostęp.
+8.4. 157.158.16.228. Zalecenie: Ustawić godziny, w których można korzystać.
+8.5. 157.158.16.135. Zalecenie: Ustawić hasło.
+
+9. Czy urządzenie sieciowe TL-WA830RE jest aktywne w infrastrukturze sieciowej RMS?
+Jest.
+
+10. Przedstaw przykład ciekawego problemu (wraz z rozwiązaniem) związanego z zarządzaniem siecią komputerową:
+Brak internetu -> podłączenie kabli :) 
