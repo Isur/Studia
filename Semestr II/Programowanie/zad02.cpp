@@ -7,11 +7,15 @@ Zabezpiecz program tak, by u¿ytkownik nie móg³ wprowadziæ wartoœci mniejszej b¹d
 #include<iostream>
 #include<string>
 using namespace std;
+
 class Circle
 {
 	double centerX;
 	double centerY;
 	double r;
+
+	friend class Point;
+	friend void distance(Circle &, Point &);
 
 public:
 	Circle()
@@ -25,28 +29,17 @@ public:
 			if (r <= 0) cout << "\nPromien musi byc wiekszy niz ZERO!";
 			cout << "\nPodaj promien kola: ";
 			cin >> r;
-		} while (r<=0);
-	}
-	void distance(double x, double y)
-	{
-		double d;
-		d = sqrt((x - centerX)*(x - centerX) + (y - centerY)*(y - centerY));
-		if(d > r) 
-		{
-			cout << "\nPunkt nie nalezy do kola, a jego odleglosc od srodka wynosi: " << d;
-		}
-		else 
-		{
-			cout << "\nPunkt nalezy do kola, a jego odleglosc od srodka wynosi: " << d;
-		}
+		} while (r <= 0);
 	}
 };
+
 class Point
 {
-public:
 	double pointX;
 	double pointY;
 
+	friend void distance(Circle &, Point &);
+public:
 	Point()
 	{
 		cout << "\nPodaj wspolrzedna X punktu: ";
@@ -56,11 +49,25 @@ public:
 	}
 };
 
+void distance(Circle & c, Point & p)
+{
+	double d;
+	d = sqrt((p.pointX - c.centerX)*(p.pointX - c.centerX) + (p.pointY - c.centerY)*(p.pointY - c.centerY));
+	if (d > c.r)
+	{
+		cout << "\nPunkt nie nalezy do kola, a jego odleglosc od srodka wynosi: " << d;
+	}
+	else
+	{
+		cout << "\nPunkt nalezy do kola, a jego odleglosc od srodka wynosi: " << d;
+	}
+}
+
 int main()
 {
 	Circle kolo;
 	Point punkt;
-	kolo.distance(punkt.pointX, punkt.pointY);
+	distance(kolo, punkt);
 	cout << endl;
 	return 0;
 }
