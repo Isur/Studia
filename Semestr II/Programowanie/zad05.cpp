@@ -1,11 +1,11 @@
-/*
-Utwórz nastêpuj¹ce klasy: Punkt, Kolo, Kwadrat, Walec, Prostopadloscian.
-Zbuduj w odpowiedni sposób hierarchiê klas.
-Dla ka¿dej klasy utwórz konstruktor domyœlny, parametryczny oraz destruktor.
-Utwórz obiekty ka¿dej z klas w taki sposób, aby:
-1) wywo³aæ wy³¹cznie konstruktory domyœlne.
-2) wywo³aæ wy³¹cznie konstruktory parametryczne.
-Efekty wywo³añ poka¿ w oknie konsoli.
+ï»¿/*
+UtwÃ³rz nastÃªpujÂ¹ce klasy: Punkt, Kolo, Kwadrat, Walec, Prostopadloscian.
+Zbuduj w odpowiedni sposÃ³b hierarchiÃª klas.
+Dla kaÂ¿dej klasy utwÃ³rz konstruktor domyÅ“lny, parametryczny oraz destruktor.
+UtwÃ³rz obiekty kaÂ¿dej z klas w taki sposÃ³b, aby:
+1) wywoÂ³aÃ¦ wyÂ³Â¹cznie konstruktory domyÅ“lne.
+2) wywoÂ³aÃ¦ wyÂ³Â¹cznie konstruktory parametryczne.
+Efekty wywoÂ³aÃ± pokaÂ¿ w oknie konsoli.
 */
 #include<iostream>
 using namespace std;
@@ -18,10 +18,8 @@ protected:
 public:
 	Punkt()
 	{
-		cout << "\nPodaj wspolrzedna srodka X: ";
-		cin >> this->x;
-		cout << "\nPodaj wspolrzedna srodka Y: ";
-		cin >> this->y;
+		cout << "\nPodaj x: "; cin >> this->x;
+		cout << "\nPodaj y: "; cin >> this->y;
 	}
 	Punkt(int x, int y)
 	{
@@ -30,169 +28,140 @@ public:
 	}
 	~Punkt()
 	{
-		cout << "\nZNISZCZONO PUNKT";
+		cout << "\nZNISZCZONO OBIEKT PUNKT";
 	}
-	void printInfo()
+	void showInfo()
 	{
-		cout << "\nWspolrzedna X: " << this->x;
-		cout << "\nWspolrzedna Y: " << this->y;
+		cout << "\n PUNKT: ";
+		cout << "\n X: " << this->x;
+		cout << "\n Y: " << this->y;
 	}
+
 };
 
-class Kolo: protected Punkt
+class Kolo:public Punkt
 {
 protected:
 	int r;
 public:
 	Kolo()
 	{
-		cout << "\nPodaj promien: ";
-		cin >> this->r;
+		cout << "\nPodaj r: "; cin >> this->r;
 	}
-	Kolo(int x, int y, int r):Punkt(x,y)
-	{
-		this->x = x;
-		this->y = y;
-		this->r = r;
-	}
+	Kolo(int x, int y, int r) :r(r), Punkt(x, y) {}
 	~Kolo()
 	{
-		cout << "\nZNISZCZONO KOLO";
+		cout << "\nZNISZCZONO OBIEKT KOLO";
 	}
-	void printInfo()
+	void showInfo()
 	{
-		cout << "\nWspolrzedna srodka X: " << this->x;
-		cout << "\nWspolrzedna srodka Y: " << this->y;
-		cout << "\nPromien: " << this->r;
+		cout << "\n KOLO: ";
+		cout << "\n X: " << this->x;
+		cout << "\n Y: " << this->y;
+		cout << "\n R: " << this->r;
 	}
 };
 
-class Kwadrat:protected Punkt
+class Walec:public Kolo
+{
+protected:
+	int h;
+public:
+	Walec()
+	{
+		cout << "\nPodaj h: "; cin >> this->h;
+	}
+	Walec(int x, int y, int r, int h) :h(h), Kolo(x, y, r) {}
+	~Walec()
+	{
+		cout << "\nZNISZCZONO OBIEKT WALEC";
+	}
+	void showInfo()
+	{
+		cout << "\n WALEC: ";
+		cout << "\n X: " << this->x;
+		cout << "\n Y: " << this->y;
+		cout << "\n R: " << this->r;
+		cout << "\n H: " << this->h;
+	}
+};
+
+class Kwadrat:public Punkt
 {
 protected:
 	int a;
 public:
 	Kwadrat()
 	{
-		cout << "\nPodaj dlugosc boku: ";
-		cin >> a;
+		cout << "\nPodaj a: "; cin >> this->a;
 	}
-	Kwadrat(int x, int y, int a):Punkt(x,y)
-	{
-		this->x = x;
-		this->y = y;
-		this->a = a;
-	}
+	Kwadrat(int x, int y, int a) :a(a), Punkt(x, y) {}
 	~Kwadrat()
 	{
-		cout << "\nZNISZCZONO KWADRAT";
+		cout << "\nZNISZCZONO OBIEKT KWADRAT";
 	}
-	void printInfo()
+	void showInfo()
 	{
-		cout << "\nWspolrzedna srodka X: " << this->x;
-		cout << "\nWspolrzedna srodka Y: " << this->y;
-		cout << "\nDlugosc boku: " << this->a;
+		cout << "\n KWADRAT: ";
+		cout << "\n X: " << this->x;
+		cout << "\n Y: " << this->y;
+		cout << "\n A: " << this->a;
 	}
+
 };
 
-class Walec: protected Kolo
+class Prostopadloscian:public Kwadrat
 {
 protected:
-	int c;
-public:
-	Walec()
-	{
-		cout << "\nPodaj wysokosc: ";
-		cin >> this->c;
-	}
-	Walec(int x, int y, int r, int c):Kolo(x,y,r)
-	{
-		this->x = x;
-		this->y = y;
-		this->r = r;
-		this->c = c;
-	}
-	~Walec()
-	{
-		cout << "\nZNISZCZONO WALEC";
-	}
-	void printInfo()
-	{
-		cout << "\nWspolrzedna srodka X: " << this->x;
-		cout << "\nWspolrzedna srodka Y: " << this->y;
-		cout << "\nPromien: " << this->r;
-		cout << "\nWysokosc: " << this->c;
-	}
-};
-
-class Prostopadloscian:protected Kwadrat
-{
-protected:
-	int b;
-	int c;
+	int h;
 public:
 	Prostopadloscian()
 	{
-		cout << "\nPodaj dlugosc boku podstawy b: ";
-		cin >> b;
-		cout << "\nPodaj wysokosc: ";
-		cin >> c;
+		cout << "\nPodaj h: "; cin >> this->h;
 	}
-	Prostopadloscian(int x, int y, int a, int b, int c):Kwadrat(x,y,a)
-	{
-		this->x = x;
-		this->y = y;
-		this->a = a;
-		this->b = b;
-		this->c = c;
-	}
+	Prostopadloscian(int x, int y, int a, int h):h(h),Kwadrat(x,y,a){}
 	~Prostopadloscian()
 	{
-		cout << "\nZNISZCZONO PROSTOPADLOSCIAN";
+		cout << "\nZNISZCZONO OBIEKT PROSTOPADLOSCIAN";
 	}
-	void printInfo()
+	void showInfo()
 	{
-		cout << "\nWspolrzedna srodka podstawy X: " << this->x;
-		cout << "\nWspolrzedna srodka podstawy Y: " << this->y;
-		cout << "\nDlugosc boku podstawy a: " << this->a;
-		cout << "\nDlugosc boku podstawy b: " << this->b;
-		cout << "\nWysokosc: " << this->c;
+		cout << "\n PROSTOPADLOSCIAN: ";
+		cout << "\n X: " << this->x;
+		cout << "\n Y: " << this->y;
+		cout << "\n A: " << this->a;
+		cout << "\n H: " << this->h;
 	}
 };
 
 int main()
 {
-	cout << "\nPUNKT";
-	Punkt point1, point(3, 4);
-	cout << "\nKWADRAT";
-	Kwadrat square1, square(2, 5, 7);
-	cout << "\nKOLO";
-	Kolo circle1, circle(3, 7, 5);
-	cout << "\nWALEC";
-	Walec cylinder1, cylinder(1, 7, 5, 3);
-	cout << "\nPROSTOPADLOSCIAN";
-	Prostopadloscian cuboid1, cuboid(1, 1, 1, 1, 1);
-	system("cls");
-	cout << "\nPunkt - konstruktor domyslny: ";
-	point1.printInfo();
-	cout << "\nPunkt - konstruktor parametryczny: ";
-	point.printInfo();
-	cout << "\nKwadrat - konstruktor domyslny: ";
-	square1.printInfo();
-	cout << "\nKwadrat - konstruktor parametryczny: ";
-	square.printInfo();
-	cout << "\nKolo - konstruktor domyslny: ";
-	circle1.printInfo();
-	cout << "\nKolo - konstruktor parametryczny: ";
-	circle.printInfo();
-	cout << "\nWalec - konstruktor domyslny: ";
-	cylinder1.printInfo();
-	cout << "\nWalec - konstruktor parametryczny: ";
-	cylinder.printInfo();
-	cout << "\nProstopadloscian - konstruktor domyslny: ";
-	cuboid1.printInfo();
-	cout << "\nProstopadloscian - konstruktor parametryczny: ";
-	cuboid.printInfo();
+	cout << "KONSTRUKTORY PARAMETRYCZNE:\n";
+	Punkt *p = new Punkt(4, 3);
+	Kolo *k = new Kolo(3, 7, 15);
+	Walec *w = new Walec(5, 4, 7, 7);
+	Kwadrat *kw = new Kwadrat(4, 5, 3);
+	Prostopadloscian *ps = new Prostopadloscian(7, 7, 7, 7);
+	p->showInfo();
+	k->showInfo();
+	w->showInfo();
+	kw->showInfo();
+	ps->showInfo();
+	cout << "\nKonstruktor domyslny PUNKT:";
+	Punkt *p1 = new Punkt();
+	cout << "\nKonstruktor domyslny KOLO:";
+	Kolo *k1 = new Kolo();
+	cout << "\nKonstruktor domyslny WALEC:";
+	Walec *w1 = new Walec();
+	cout << "\nKonstruktor domyslny KWADRAT:";
+	Kwadrat *kw1 = new Kwadrat();
+	cout << "\nKonstruktor domyslny PROSTOPADLOSCIAN:";
+	Prostopadloscian *ps1 = new Prostopadloscian();
+	p1->showInfo();
+	k1->showInfo();
+	w1->showInfo();
+	kw1->showInfo();
+	ps1->showInfo();
 
 	cout << endl;
 	return 0;
