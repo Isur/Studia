@@ -1,9 +1,9 @@
 /*
 Zadanie
-1) Utwórz dowoln¹ klasê.
-2) W ramach klasy utwórz konstruktor domyœlny, parametryczny oraz destruktor.
-Zademonstruj w wybrany przez siebie sposób dzia³anie konstruktorów oraz destruktora tworz¹c obiekty poza funkcj¹ main(), 
-w ramach funkcji main, z podaniem i bez podania argumentów oraz za pomoc¹ opearatora new.
+1) UtwÃ³rz dowolnÂ¹ klasÃª.
+2) W ramach klasy utwÃ³rz konstruktor domyÅ“lny, parametryczny oraz destruktor.
+Zademonstruj w wybrany przez siebie sposÃ³b dziaÂ³anie konstruktorÃ³w oraz destruktora tworzÂ¹c obiekty poza funkcjÂ¹ main(), 
+w ramach funkcji main, z podaniem i bez podania argumentÃ³w oraz za pomocÂ¹ opearatora new.
 */
 
 #include<iostream>
@@ -37,6 +37,9 @@ public:
 		cout << "Zniszczono " << name;
 	}
 };
+
+RandomClass object3(99);
+
 int main()
 {
 	int a;
