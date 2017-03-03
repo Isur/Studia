@@ -4,3 +4,12 @@ Dziedziczenie:	|	Publiczna	Chroniona	Prywatna
 Publiczna	|	Publiczna	Chroniona	Niewidoczna
 Chroniona	|	Chroniona	Chroniona	Niewidoczna
 Prywatna	|	Prywatna	Prywatna	Niewidoczna
+Publiczna/Publiczna
+Publiczna/Chroniona
+Publiczna/Prywatna
+Chroniona/Publiczna
+Chroniona/Chroniona
+Chroniona/Prywatna
+Prywatna/Publiczna
+Prywatna/Chroniona
+Prywatna/Prywatna
