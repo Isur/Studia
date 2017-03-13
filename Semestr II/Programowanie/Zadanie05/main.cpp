@@ -1,4 +1,4 @@
-﻿/*
+/*
 Utwórz nastêpuj¹ce klasy: Punkt, Kolo, Kwadrat, Walec, Prostopadloscian.
 Zbuduj w odpowiedni sposób hierarchiê klas.
 Dla ka¿dej klasy utwórz konstruktor domyœlny, parametryczny oraz destruktor.
@@ -8,6 +8,7 @@ Utwórz obiekty ka¿dej z klas w taki sposób, aby:
 Efekty wywo³añ poka¿ w oknie konsoli.
 */
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 class Punkt
@@ -164,5 +165,6 @@ int main()
 	ps1->showInfo();
 
 	cout << endl;
+	system("pause");
 	return 0;
 }

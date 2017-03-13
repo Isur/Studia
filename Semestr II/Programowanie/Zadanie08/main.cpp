@@ -1,10 +1,11 @@
 /*
 Zadanie:
-Wybierz cztery operatory, które bêdziesz prze³adowywa³ (dwa jednoargumentowe oraz dwa dwuargumentowe). 
+Wybierz cztery operatory, które bêdziesz prze³adowywa³ (dwa jednoargumentowe oraz dwa dwuargumentowe).
 Nastêpnie napisz funkcje prze³adowuj¹ce.
 Ka¿dy typ operatora powinien mieæ utworzon¹ funkcjê w postaci funkcji globalnej oraz metody klasy.
 */
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 class Number
@@ -63,7 +64,7 @@ int main()
 	r = x + y;
 	r.show();
 	cout << "\nOperator 2-argumentowy % \n";
-	r = x % y;	
+	r = x % y;
 	r.show();
 	cout << "\nOperator 1-argumentowy ! (na obiekcie 1) \n";
 	r = !x;
@@ -73,5 +74,6 @@ int main()
 	r.show();
 
 	cout << endl;
+	system("pause");
 	return 0;
 }

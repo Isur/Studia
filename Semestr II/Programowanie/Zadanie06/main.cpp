@@ -7,6 +7,7 @@ Wykorzystuj¹c wskaŸnik wywo³aj w ramach ka¿dej z klas metodê obliczaj¹c¹ pole po
 Zwróæ uwagê na elementy charakterystyczne dla polimorfizmu.
 */
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 class Figura
@@ -104,5 +105,6 @@ int main()
 
 
 	cout << endl;
+	system("pause");
 	return 0;
 }

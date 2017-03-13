@@ -1,6 +1,0 @@
-Pochodna:	|			Bazowa:
-Dziedziczenie:	|	Publiczna	Chroniona	Prywatna
-----------------|---------------------------------------------------
-Publiczna	|	Publiczna	Chroniona	Niewidoczna
-Chroniona	|	Chroniona	Chroniona	Niewidoczna
-Prywatna	|	Prywatna	Prywatna	Niewidoczna

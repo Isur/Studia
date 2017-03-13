@@ -1,5 +1,5 @@
 #pragma once
-template <class MainType, class SecondType> 
+template <class MainType, class SecondType>
 class Walec
 {
 public:

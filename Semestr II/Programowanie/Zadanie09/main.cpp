@@ -4,13 +4,14 @@ Napisz program wykorzystuj¹cy mechanizm "try throw catch". Program powinien:
 1) zawieraæ funkcjê dzielenia z obs³ug¹ wyj¹tku dzielenia przez zero.
 2) zawieraæ funkcjê modulo z obs³ug¹ wyj¹tku gdzie wprowadzone dwie zmienne s¹ równe b¹dz s¹ swoimi wielokrotnoœciami.
 
-W sytuacji kiedy wprowadzane dane s¹ prawid³owe, program powinien wyœwietlaæ wyniki. 
-W sytuacji gdy dane s¹ niedozwolone powinien pojawiæ siê stosowny komunikat. 
-Obs³uga obu wyj¹tków ma dzia³aæ niezale¿nie od siebie 
+W sytuacji kiedy wprowadzane dane s¹ prawid³owe, program powinien wyœwietlaæ wyniki.
+W sytuacji gdy dane s¹ niedozwolone powinien pojawiæ siê stosowny komunikat.
+Obs³uga obu wyj¹tków ma dzia³aæ niezale¿nie od siebie
 (wywo³anie komunikatu wyj¹tku dla jednej funkcji nie mo¿e powodowaæ zatrzymania dzia³ania drugiej funkcji).
 
 */
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 class Division
@@ -72,5 +73,6 @@ int main()
 	}
 
 	cout << endl;
+	system("pause");
 	return 0;
 }

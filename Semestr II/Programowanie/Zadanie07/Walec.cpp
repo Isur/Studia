@@ -1,6 +1,5 @@
 #include "Walec.h"
 
-
 template<class MainType, class SecondType>
 MainType Walec<MainType, SecondType>::field()
 {

@@ -6,8 +6,10 @@ Zabezpiecz program tak, by u¿ytkownik nie móg³ wprowadziæ wartoœci mniejszej b¹d
 
 #include<iostream>
 #include<string>
+#include<stdlib.h>
+#include<math.h>
 using namespace std;
-
+class Point;
 class Circle
 {
 	double centerX;
@@ -69,5 +71,6 @@ int main()
 	Point punkt;
 	distance(kolo, punkt);
 	cout << endl;
+	system("pause");
 	return 0;
 }

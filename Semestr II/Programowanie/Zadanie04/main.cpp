@@ -26,6 +26,7 @@ Choinka ma wygl¹daæ jak poni¿ej.
 */
 
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 class Tree
@@ -33,10 +34,10 @@ class Tree
 	char symbol = '*';
 	int height;
 	int levels;
-	
+
 	void printTree()
 	{
-		int i, j, k, counter = 1; 
+		int i, j, k, counter = 1;
 		int space = 2*height*levels;
 		for (k = 0; k < levels; k++)
 		{
@@ -75,5 +76,6 @@ int main()
 {
 	Tree littleTree;
 	cout << endl;
+	system("pause");
 	return 0;
 }
