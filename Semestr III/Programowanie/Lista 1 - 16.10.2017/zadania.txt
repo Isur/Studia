@@ -1,0 +1,41 @@
+Ćwiczenia 1 (16 października 2017 r.)
+
+1. Napisz funkcję print_array(ostream& os, int* a, int n) która wypisuje do os wartości tablicy a 
+   mającej n elementów.
+
+2. Wypróbuj funkcję na tablicy 20 elementów zaalokowanej na stercie. Zainicjuj ją liczbami 100, 
+   101, 102, itd., a następnie wypisz jej elementy. Po zakończeniu programu zwolnij pamięć zajmowaną przez tę tablicę.
+   
+3. Zaimplementuj klasę vector z wykładu i wykonaj ćwiczenia 1 i 2 z użyciem tych vectorów zamiast 
+   tablicy.
+   
+4. Korzystając z faktu, że elementy tablicy zajmują w pamięci obszar ciągły oblicz, ile miejsca 
+   w pamięci zajmują wartości typu int, double i bool. Nie korzystaj z operatora sizeof.
+   
+5. Napisz program, który wyczerpie pamięć na stercie. Uruchom go, żeby zobaczyć co się stanie.
+   Sprawdź, co na ten temat pisze dokumentacja kompilatora.
+   
+6. Zmodyfikuj poprzedni program tak, by wyświetlał informację o maksymalnej ilości pamięci na
+   stercie, którą udało mu się zaalokować.
+   
+7. Napisz program, który sprawdza, czy adresy kolejno zajmowanych miejsc na stosie i stercie 
+   rosną czy maleją.
+   
+8. Zadanie domowe. Zaimplementować listę obiektów klasy Link
+   class Link {
+      string value;
+      Link* prev;
+      Link* succ;
+      Link (const string& v, Link* p = nullptr, Link* s = nullptr)
+         :value{v}, prev{p}, succ{s} { }
+   };
+   
+   z następującymi operacjami:
+   Link* insert (Link* n);       wstawia n przed tym obiektem i zwraca dodany element
+   Link* add (Link* n);          wstawia n za tym obiektem dodany element
+   Link* erase ();               usuwa element z listy i zwraca poprzedni element
+   Link* find (const string& s); zwraca pierwszy element listy równy s
+   // const Link* find (const string& s) const;
+   Link* advance (int n) const;  zwraca wskaźnik n-tego z kolei elementu listy
+   Link* next () const;          zwraca wskaźnik następnego elementu listy lub nullptr
+   Link* previous const ();      zwraca wskaźnik poprzedniego elementu listy
