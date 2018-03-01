@@ -1,0 +1,9 @@
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\bin\Debug\lab_02.exe.config
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\bin\Debug\lab_02.exe
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\bin\Debug\lab_02.pdb
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\obj\Debug\lab_02.csprojResolveAssemblyReference.cache
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\obj\Debug\lab_02.Form1.resources
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\obj\Debug\lab_02.Properties.Resources.resources
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\obj\Debug\lab_02.csproj.GenerateResource.Cache
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\obj\Debug\lab_02.exe
+C:\Users\artur.bednarczyk\Programowanie\lab_02\lab_02\obj\Debug\lab_02.pdb
